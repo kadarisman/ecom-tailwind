@@ -1,4 +1,4 @@
-import logo from "./logo.svg";
+//import logo from "./logo.svg";
 import "./App.css";
 
 function App() {
@@ -7,7 +7,7 @@ function App() {
       {/* top menu*/}
       <div className="flex justify-between border-b border-slate-300 py-2 text-sm">
         <div className="flex gap-8">
-          <a href="#" className="text-green-500">
+          <a href="https://www.google.com/" className="text-green-500">
             Chat with us
           </a>
           <p>+62 852 7069 9263</p>
