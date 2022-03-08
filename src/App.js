@@ -33,14 +33,14 @@ function App() {
             placeholder="Search Products, categories ..."
           />
           <img
-            src="img/icon/search-icon.png"
+            src="img/icon/search-icon.png" alt=""
             className="w-4 h-4 self-center -ml-8"
           />
         </div>
         <div className="flex gap-5">
-          <img src="img/icon/user-icon.png" className="w-7 h-7 self-center" />
+          <img src="img/icon/user-icon.png" alt="" className="w-7 h-7 self-center" />
           <div className="flex relative">
-            <img src="img/icon/cart-icon.png" className="w-7 h-7 self-center" />
+            <img src="img/icon/cart-icon.png" alt="" className="w-7 h-7 self-center" />
             <div className="absolute -bottom-1 -left-1 text-xs bg-red-500 rounded-full w-4 h-4 text-white pl-1 font-bold">
               4
             </div>
@@ -746,7 +746,7 @@ function App() {
 
         <div className="flex gap-8">
           <div className="border-2 border-gray-200 px-3 rounded-lg">
-            <img src="img/product/product01.png" className="mt-3"/>
+            <img src="img/product/product01.png" alt="" className="mt-3"/>
             <h2 className="font-bold mb-3 mt-3">Bolu Susun</h2>
             <p className="text-gray-500 text-xs">Disusun dengan penuh kenangan</p>
             <div className="flex justify-between mt-3">
@@ -759,7 +759,7 @@ function App() {
           </div>
 
           <div className="border-2 border-gray-200 px-3 rounded-lg">
-            <img src="img/product/product02.png" className="mt-3"/>
+            <img src="img/product/product02.png" alt="" className="mt-3"/>
             <h2 className="font-bold mb-3 mt-3">Mie Aceh</h2>
             <p className="text-gray-500 text-xs">Rasanya menusuk jiwa dan raga</p>
             <div className="flex justify-between mt-3">
@@ -772,7 +772,7 @@ function App() {
           </div>
 
           <div className="border-2 border-gray-200 px-3 rounded-lg">
-            <img src="img/product/product03.png" className="mt-3"/>
+            <img src="img/product/product03.png" alt="" className="mt-3"/>
             <h2 className="font-bold mb-3 mt-3">Bolu Lapis</h2>
             <p className="text-gray-500 text-xs">Lapisan legit disetiap sentuhan</p>
             <div className="flex justify-between mt-3">
@@ -788,7 +788,7 @@ function App() {
         <div  className="flex gap-8">
 
           <div className="border-2 border-gray-200 px-3 rounded-lg">
-            <img src="img/product/product06.png" className="mt-3"/>
+            <img src="img/product/product06.png" alt="" className="mt-3"/>
             <h2 className="font-bold mb-3 mt-3">Donat</h2>
             <p className="text-gray-500 text-xs">Rasa nya bikin hangat</p>
             <div className="flex justify-between mt-3">
@@ -800,7 +800,7 @@ function App() {
           </div>
 
           <div className="border-2 border-gray-200 px-3 rounded-lg">
-            <img src="img/product/product05.png" className="mt-3"/>
+            <img src="img/product/product05.png" alt="" className="mt-3"/>
             <h2 className="font-bold mb-3 mt-3">Pizza Huut</h2>
             <p className="text-gray-500 text-xs">Potongan penuh nikmat dan lezat</p>
             <div className="flex justify-between mt-3">
@@ -813,7 +813,7 @@ function App() {
           </div>
 
           <div className="border-2 border-gray-200 px-3 rounded-lg">
-            <img src="img/product/product04.png" className="mt-3"/>
+            <img src="img/product/product04.png" alt="" className="mt-3"/>
             <h2 className="font-bold mb-3 mt-3">Mata Sapi</h2>
             <p className="text-gray-500 text-xs">Rasanya tidak seperti Mata Najwa</p>
             <div className="flex justify-between mt-3">
