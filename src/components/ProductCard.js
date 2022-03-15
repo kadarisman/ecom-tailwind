@@ -8,8 +8,8 @@ const ProductCard = (props) => {
  
   return (
     <div className="border-2 border-gray-200 px-3 rounded-lg pb-3">
+    <Link to={item.name} >
       <img src={`img/product/${item.image}`} alt="" className="mt-3" />
-      <Link to={item.name} >
         <h2 className="font-bold mb-3 mt-3">{item.name}</h2>
       </Link>
       <p className="text-gray-500 text-xs">{item.description}</p>
