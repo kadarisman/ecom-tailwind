@@ -2,7 +2,7 @@ import { useParams } from "react-router-dom";
 import Layout from "./Layout";
 import products from "../services/data/product";
 import NumberFormat from 'react-number-format'; 
-import ProductCard from "./ProductCard";
+// import ProductCard from "./ProductCard";
 
 const Detail = () => {
   const params = useParams();
