@@ -1,34 +1,30 @@
+import products from "../services/data/product";
+import catagories from "../services/data/catagories";
+
 function SideBAr() {
+  // const catagories = [];
+  // products.map((item, index) => {
+  //   if (catagories.indexOf(item.catagory) === -1) {
+  //     catagories.push(item, catagory);
+  //   }
+  // });
+
   return (
-    <div className="w-1/5 ">
+    <div className="w-2/5">
       {/* categories */}
       <div className="">
         <h2 className="text-base font-bold">Categories</h2>
         <ul className="text-sm py-3">
-          <li className="flex justify-between mb-1">
-            Bolu
-            <span className="text-green-500 bg-gray-100 p-1 rounded-lg">
-              320
-            </span>
-          </li>
-          <li className="flex justify-between mb-1">
-            Mie
-            <span className="text-green-500 bg-gray-100 p-1 rounded-lg">
-              112
-            </span>
-          </li>
-          <li className="flex justify-between mb-1">
-            Pizza
-            <span className="text-green-500 bg-gray-100 p-1 rounded-lg">
-              32
-            </span>
-          </li>
-          <li className="flex justify-between mb-1">
-            Dessert
-            <span className="text-green-500 bg-gray-100 p-1 rounded-lg">
-              48
-            </span>
-          </li>
+          {catagories.map((item, index) => {
+            return(
+              <li className="flex justify-between mb-1">
+              {item}
+              <span className="text-green-500 bg-gray-100 p-1 rounded-lg">
+                {products.filter((product, productIndex) => product.catagory === item).length}
+              </span>
+            </li>
+            )
+          })}
         </ul>
       </div>
 

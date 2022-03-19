@@ -21,7 +21,8 @@ const Layout = (props) => {
             <MainMenu title="Pharmacy" icon={true}/>
           </ul>
         </div>
-
+        
+        
         {props.children}
        
         {/* copyright */}

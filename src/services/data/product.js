@@ -6,6 +6,7 @@ const products = [
         originalPrice: 40000,
         discontPercent: 10,
         image: "product01.png",
+        catagory: "bolu",
         detailDescrption:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type",
     },
     {
@@ -14,7 +15,8 @@ const products = [
         description: "Rasanya bikin guling guling",
         originalPrice: 28000,
         discontPercent: 5,
-        image: "product02.png",        
+        image: "product02.png",  
+        catagory: "mie",      
         detailDescrption:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type",
 
     },
@@ -25,6 +27,7 @@ const products = [
         originalPrice: 40000,
         discontPercent: 0,
         image: "product03.png",
+        catagory: "bolu",
         detailDescrption:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type",
 
     },
@@ -35,6 +38,7 @@ const products = [
         originalPrice: 5000,
         discontPercent: 5,
         image: "product04.png",
+        catagory: "lauk",
         detailDescrption:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type",
 
     },
@@ -45,6 +49,7 @@ const products = [
         originalPrice: 50000,
         discontPercent: 5,
         image: "product05.png",
+        catagory: "pizza",
         detailDescrption:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type",
 
     },
@@ -55,6 +60,51 @@ const products = [
         originalPrice: 10000,
         discontPercent: 0,
         image: "product06.png",
+        catagory: "bolu",
+        detailDescrption:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type",
+
+    },
+    {
+        id: 7,
+        name : "Nasi Goreng",
+        description: "Rasanyan bikin nikmat dan mantap",
+        originalPrice: 30000,
+        discontPercent: 0,
+        image: "product07.png",
+        catagory: "main",
+        detailDescrption:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type",
+
+    },
+    {
+        id: 8,
+        name : "Ice Cream",
+        description: "Rasanyan bikin nikmat dan mantap",
+        originalPrice: 30000,
+        discontPercent: 0,
+        image: "product08.png",
+        catagory: "dessert",
+        detailDescrption:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type",
+
+    },
+    {
+        id: 9,
+        name : "Martabak Telur",
+        description: "Rasanyan bikin nikmat dan mantap",
+        originalPrice: 30000,
+        discontPercent: 0,
+        image: "product09.png",
+        catagory: "dessert",
+        detailDescrption:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type",
+
+    },
+    {
+        id: 10,
+        name : "Roti Bakar",
+        description: "Rasanyan bikin nikmat dan mantap",
+        originalPrice: 30000,
+        discontPercent: 0,
+        image: "product10.png",
+        catagory: "Bolu",
         detailDescrption:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type",
 
     },
