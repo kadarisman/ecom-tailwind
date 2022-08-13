@@ -1,6 +1,5 @@
 //import NumberFormat from 'react-number-format'; 
-import { Link } from "react-router-dom";
-
+import FormatRupiah from "../helpers/formatRupiah";
 const ProductCard = (props) => {
   const item = props.item;
   return (
@@ -11,7 +10,7 @@ const ProductCard = (props) => {
           <div className="font-bold text-sm mb-2 w-48">{item.title}</div>
           <h2 className="italic mb-3 mt-3">{item.category}</h2>
           <p className="text-gray-700 text-lg font-bold">
-            {item.price}
+            {FormatRupiah(item.price * 100)}
           </p>
         </div>
         <div className="px-6 pt-4 pb-2">

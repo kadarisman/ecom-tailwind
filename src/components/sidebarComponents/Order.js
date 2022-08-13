@@ -1,23 +1,22 @@
-const Order = () => {
-    return(
-        <div className="mt-4">
-        <h2 className="text-base font-bold mb-3">Order By</h2>
+const Order = (props) => {
+  const handleOrderBy = (e) => {
+    props.product(e.target.id)
+  }
 
-        <div className="mb-1 text-sm">
-          <input type="checkbox" className="w-4 h-4" />
-          <span className="ml-2">Termurah</span>
-        </div>
-
-        <div className="mb-1 text-sm">
-          <input type="checkbox" className="w-4 h-4 accent-green-500" checked />
-          <span className="ml-2">Terlaris</span>
-        </div>
-
-        <div className="mb-1 text-sm">
-          <input type="checkbox" className="w-4 h-4 accent-green-500" checked />
-          <span className="ml-2">Termahal</span>
-        </div>
-      </div>
-    )
+  return (
+    <div className="">
+    <h2 className="text-base font-bold">Categories</h2>
+    <ul className="text-sm py-3">
+      <div className="flex justify-between">
+        <button>
+          <li className="bg-gray-200 text-gray-700 text-xs px-1.5 py-0.5 rounded mb-1" onClick={(e)=> handleOrderBy(e)} id="murah">Termurah
+          </li>
+          <li className="bg-gray-200 text-gray-700 text-xs px-1.5 py-0.5 rounded mb-1" onClick={(e)=>handleOrderBy(e)} id="mahal">Termahal
+          </li>
+        </button>
+      </div>    
+    </ul>
+  </div>
+  )
 }
 export default Order;

@@ -1,8 +1,6 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-import Price from "./sidebarComponents/Price";
 import Order from "./sidebarComponents/Order";
-import Rating from "./sidebarComponents/Rating";
 function SideBAr(props) {
   const [categories, setcategories] = useState([]);
   const [total, setTotal] = useState('');
@@ -29,9 +27,10 @@ function SideBAr(props) {
     const response = await axios.get('https://fakestoreapi.com/products/categories');
     const getAllProducts = await axios.get('https://fakestoreapi.com/products/');
     let getCat = [];
-    response.data.map(item => {
+    response.data.map((item) => {
       const count = getAllProducts.data.filter((product, productIndex) => product.category === item).length;
       getCat = [...getCat, { item: item, jumlah: count }]
+      return true;
     })
     setTotal(getAllProducts.data.length);
     setcategories(getCat);
@@ -55,9 +54,9 @@ function SideBAr(props) {
         </div>
         {categories.map((item, index) => {
           return (
-            <div className="flex justify-between">
+            <div className="flex justify-between" key={index}>
               <button>
-                <li className={categoriActive == item.item ? styleActive : styleNotActive} onClick={(e) => onCategory(e, item)} id={item.item} key={item.item}>
+                <li className={categoriActive === item.item ? styleActive : styleNotActive} onClick={(e) => onCategory(e, item)} id={item.item} key={item.item}>
                   {item.item}
                 </li>
               </button>
@@ -68,9 +67,7 @@ function SideBAr(props) {
           )
         })}
       </ul>
-      <Order />
-      <Rating />
-      <Price />
+      <Order product={props.orderBy} />
     </div>
   );
 }
