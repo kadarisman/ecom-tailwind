@@ -30,22 +30,19 @@ const Home = () => {
 
   const handleOrderBy = (e) => {
     const orderByValue = e;
-    // const produtcOrderbyPrice = productsFilter.sort((a, b) => (a.price > b.price ? dd1 : -1));'oo'dcccc'ddcc.c.XddeeXcc
-    let produtcOrderbyPrice = [];
     if(orderByValue == 'murah'){
-      console.log(e);
-      const produtcOrderbyPriceMurah = products.sort((a, b) => (a.price > b.price ? 1 : -1));
-      console.log(produtcOrderbyPriceMurah);
-      //onsole.log(products);
-      //setProduct(produtcOrderbyPrice);
+      //console.log(e);
+      const sortByMurah = [...products];
+      sortByMurah.sort((a, b) => (a.price > b.price ? 1 : -1));
+      setProduct(sortByMurah);
+      //console.log(sortByMurah);
     } else {
-      console.log(e);
-      const produtcOrderbyPriceMahal = products.sort((a, b) => (a.price > b.price ? -1 : 1));
-      console.log(produtcOrderbyPriceMahal);
-      //setProduct(produtcOrderbyPrice);
+      //console.log(e);
+      const sortByMahal = [...products];
+      sortByMahal.sort((a, b) => (a.price > b.price ? -1 : 1));
+      setProduct(sortByMahal);
+      //console.log(sortByMahal);
     }
-    //setProduct([]);
-    // console.log(produtcOrderbyPrice);
   }
 
   return (
