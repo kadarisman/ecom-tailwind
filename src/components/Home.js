@@ -1,39 +1,62 @@
+import { useState, useEffect } from "react";
 import Footer from "./Footer";
 import ProductCard from "./ProductCard";
-import { DownOutlined } from "@ant-design/icons";
-import products from "../services/data/product";
 import SideBar from "./SideBar";
 import Layout from "./Layout";
+import axios from "axios";
 
 const Home = () => {
+  const [products, setProduct] = useState([]);
+  const [productsFilter, setProductFilter] = useState([]);
+  
+  useEffect(() => {
+    getProducts();
+    
+  },[]);
+
+  const getProducts = async ()=>{
+    const response = await axios.get('https://fakestoreapi.com/products/');
+    setProduct(response.data);
+    setProductFilter(response.data);
+  }
+
+  const handleCategories =  async (e) => {
+    const categorySelected = e;
+    const response = await axios.get('https://fakestoreapi.com/products/');
+    const productByCategory = response.data.filter((item, index ) => item.category === categorySelected);
+    setProduct(productByCategory);
+    //setProductFilter(productByCategory);
+  }
+
+  const handleOrderBy = (e) => {
+    const orderByValue = e;
+    if(orderByValue == 'murah'){
+      //console.log(e);
+      const sortByMurah = [...products];
+      sortByMurah.sort((a, b) => (a.price > b.price ? 1 : -1));
+      setProduct(sortByMurah);
+      //console.log(sortByMurah);
+    } else {
+      //console.log(e);
+      const sortByMahal = [...products];
+      sortByMahal.sort((a, b) => (a.price > b.price ? -1 : 1));
+      setProduct(sortByMahal);
+      //console.log(sortByMahal);
+    }
+  }
+
   return (
     <Layout>
-      {/* main */}
-      <div className="flex justify-end mx-11 py-16">
-        {/* sidebar */}
-        <SideBar />
-        {/* product */}
-          <div className="pl-11">
-            <div className="flex gap-8 flex-wrap">
-              {products.map((item, index) => {
-                return <ProductCard item={item} />;
+      <div className="flex flex-row py-16 pl-6">
+          <div className="w-72">
+          <SideBar onClick={handleCategories} getAll={getProducts} orderBy={handleOrderBy}/>
+          </div>
+          <div className="flex flex-row gap-1 flex-wrap justify-around ml-5 w-full">
+              {products.map((product, index) => {
+                return <ProductCard item={product}  key={product.id } />;
               })}
-            </div>
           </div>
       </div>
-
-      <div className="flex justify-center mb-10">
-        <button
-          data-dropdown-toggle="dropdown"
-          class="text-white bg-green-600 font-bold rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center"
-          type="button"
-        >
-          Show more product
-          <DownOutlined className="text-xs ml-1.5 text-white" />
-        </button>
-      </div>
-
-      {/* footer */}
       <Footer />
     </Layout>
   );
