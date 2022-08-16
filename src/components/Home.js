@@ -5,9 +5,11 @@ import SideBar from "./SideBar";
 import Layout from "./Layout";
 import axios from "axios";
 
-const Home = () => {
+const Home = (props) => {
   const [products, setProduct] = useState([]);
   const [productsFilter, setProductFilter] = useState([]);
+  const [cart, setCart] = useState(0);
+  const [search, setSearch] = useState([]);
   
   useEffect(() => {
     getProducts();
@@ -45,15 +47,35 @@ const Home = () => {
     }
   }
 
+  const addToCart = () =>{
+    setCart( cart + 1);
+  }
+
+  const handleSearch = async (e) => {
+    const searchQuery = e.target.value.toLowerCase();
+    const old = products;
+    const response = await axios.get('https://fakestoreapi.com/products/');
+
+    if (searchQuery !== '') {
+      const filteredData = response.data.filter((item) => {
+          return Object.values(item).join('').toLowerCase().includes(searchQuery.toLowerCase())
+      })
+      setProduct(filteredData)
+    }
+    else{
+      setProduct(old)
+    }  
+  }
+
   return (
-    <Layout>
+    <Layout cart={cart} handleSearch={handleSearch}>
       <div className="flex flex-row py-16 pl-6">
           <div className="w-72">
           <SideBar onClick={handleCategories} getAll={getProducts} orderBy={handleOrderBy}/>
           </div>
           <div className="flex flex-row gap-1 flex-wrap justify-around ml-5 w-full">
               {products.map((product, index) => {
-                return <ProductCard item={product}  key={product.id } />;
+                return <ProductCard item={product}  key={product.id } addToCart={addToCart}/>;
               })}
           </div>
       </div>

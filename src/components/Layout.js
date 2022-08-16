@@ -2,10 +2,12 @@ import LogoSearch from "./LogoSearch";
 import MainMenu from "./MainMenu";
 import TopMenu from "./TopMenu";
 const Layout = (props) => {
+  const cart = props.cart;
+  const handleSearch = props.handleSearch;
   return (
     <div className="container mx-auto">
       <TopMenu />
-      <LogoSearch />
+      <LogoSearch cart={cart} handleSearch={handleSearch}/>
       <div className="flex justify-between mt-0 bg-gray-100 py-2 pl-6">
         <ul className="flex gap-14 items-center font-semibold">
           <MainMenu title="Bakery" icon={true} />
